@@ -3,52 +3,6 @@ namespace myImages {
 
     helpers._registerFactory("image", function(name: string) {
         switch(helpers.stringTrim(name)) {
-            case "image1":
-            case "dude":return img`
-........................
-.....ffff...............
-...fff22fff.............
-..fff2222fff............
-.fffeeeeeefff...........
-.ffe222222eef...........
-.fe2ffffff2ef...........
-.ffffeeeeffff...........
-ffefbf44fbfeff..........
-fee41fddf14eef..........
-.ffffdddddeef...........
-fddddf444eef............
-fbbbbf2222f4e...........
-fbbbbf2222fd4...........
-.fccf45544f44...........
-..ffffffff..............
-....ff..ff..............
-........................
-........................
-........................
-........................
-........................
-........................
-........................
-`;
-            case "image2":
-            case "obstacle":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . c c . . . . . . . . 
-. . . . c a f b c . . . . . . . 
-. . . . b f f b c c . . . . . . 
-. . . a a f b a b a c . . . . . 
-. . . c a c b b f f b . . . . . 
-. . . . b f f b f a b . . . . . 
-. . . . a f f b b b a . . . . . 
-. . . . . a b b c c . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
             case "image3":
             case "ball":return img`
 . . f f f f f . . 
@@ -60,23 +14,6 @@ f f f f f f f f f
 f f f f f f f f f 
 . f f f f f f f . 
 . . f f f f f . . 
-`;
-            case "image4":
-            case "pin":return img`
-. . . . . . 1 1 . . . . . . 
-. . . . . 1 1 1 1 . . . . . 
-. . . . . 1 1 1 1 . . . . . 
-. . . . . 1 1 1 1 . . . . . 
-. . . . . . 1 1 . . . . . . 
-. . . . . . 2 2 . . . . . . 
-. . . . . 2 1 1 2 . . . . . 
-. . . . 1 1 1 1 1 1 . . . . 
-. . . . 1 1 1 1 1 1 . . . . 
-. . . . 1 1 1 1 1 1 . . . . 
-. . . . 1 1 1 1 1 1 . . . . 
-. . . . 1 1 1 1 1 1 . . . . 
-. . . . 1 1 1 1 1 1 . . . . 
-. . . . . 1 1 1 1 1 . . . . 
 `;
             case "image5":
             case "bg":return img`
@@ -201,13 +138,160 @@ ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 `;
+            case "image2":
+            case "obstacle":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . 4 4 4 4 4 4 4 4 . . . 
+. . . 4 4 4 2 2 2 2 2 2 2 4 4 . 
+. . . a a 4 4 4 4 4 4 4 4 a a . 
+. . a a a a a a a a a a a a a . 
+. . a a c a a a c a a a a a a . 
+. a a c c a a a c a a a c c a a 
+. a c c a a a a c a a a a c c c 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "image4":
+            case "pin":return img`
+. . . . . . 1 1 . . . . . . 
+. . . . . 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 . . . . . 
+. . . . . 1 1 1 1 . . . . . 
+. . . . . . 1 1 . . . . . . 
+. . . . . . 2 2 . . . . . . 
+. . . . . 2 1 1 2 . . . . . 
+. . . . 1 1 1 1 1 1 . . . . 
+. . . . 1 1 1 1 1 1 . . . . 
+. . . . 1 1 1 1 1 1 . . . . 
+. . . . 1 1 1 1 1 1 . . . . 
+. . . . 1 1 1 1 1 1 . . . . 
+. . . . 1 1 1 1 1 1 . . . . 
+. . . . . 1 1 1 1 . . . . . 
+`;
         }
         return null;
     })
 
     helpers._registerFactory("animation", function(name: string) {
         switch(helpers.stringTrim(name)) {
-
+            case "rolling":
+            case "anim1":return [img`
+. . f f f f f . . 
+. f f f b f f f . 
+f f d f f f f f f 
+f f f f f f b f f 
+f f f b f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f b f f f 
+f f f f f f f f f 
+f f b f f f b f f 
+f f f f f f f f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f b f f f b f f 
+f f f f f f f f f 
+f f f f f f b f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f f b f f f f f 
+f f f f f f b f f 
+f f f f f f f f f 
+f f f f f b f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f f f f f f f f 
+f f f f b f f f f 
+f f f f f f f f f 
+f f f f f f b f f 
+. f f f b f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f b f f f f f f 
+. f f f b f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f b f f f f f f f 
+. f f f f f f f . 
+. . f b f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f f f f f . 
+f f d f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f b f f f f . 
+f f d f f f f b f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`, img`
+. . f f f f f . . 
+. f f f b f f b . 
+f f d f f f f f f 
+f f f f f f b f f 
+f f f f f f f f f 
+f f f f f f f f f 
+f f f f f f f f f 
+. f f f f f f f . 
+. . f f f f f . . 
+`];
         }
         return null;
     })
